@@ -121,6 +121,7 @@ sha256sum -c SHA256SUMS.txt
 
 ## Catatan
 
+- `firmware-merged.bin` dibuat dengan flash mode **DIO** (sesuai bootloader board ini). **Jangan** membuat ulang merged image dengan `--flash_mode qio` — header bootloader akan berubah dan board gagal boot (layar gelap).
 - Alamat flash di atas **khusus ESP32-S3**. Jangan pakai firmware ini untuk board ESP32 klasik (mis. 3.5" 3248S035C).
 - Jangan flash `firmware-merged.bin` ke alamat selain **0x0**.
 - Setelah flash, seluruh isi flash (termasuk partisi OTA) diganti; data pengguna di flash akan hilang.
